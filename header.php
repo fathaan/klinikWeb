@@ -18,13 +18,16 @@
     <div class="wrapper">
         <div class="navigation">
             <ul>
-                <li style="padding-left:27px; padding-top:8px;">
+                <li style="padding-left:27px; padding-top:2px;">
                     <a href="#">
                         <span class="title">
                             <strong style="font-size: 30px;">Klinik Kampus</strong>
                         </span>
                     </a>
+                    <img src="assets/imgs/pasienTidur.png" width=100%>
                 </li>
+
+
 
                 <li style="right:30px;">
                     <a href="index.php" class="active">
@@ -87,16 +90,19 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                            </span>
-                            <span class="title">&ensp;Sign Out</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="foto">
+                    <?php date_default_timezone_set('Asia/Jakarta');
+                    $dateNow = date('d F Y'); ?>
+                    <span class="date"><strong><?php echo $dateNow; ?> &ensp;&ensp;</strong></span>
+                    <span><strong>&ensp;&ensp;<?php echo isset($_SESSION["nama"]) ? $_SESSION["nama"] : "unknown"; ?></strong></span>
+                    <span>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/imgs/user.png" alt="User" width=35></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>&ensp;&ensp;Setting</a></li>
+                            <li><a class="dropdown-item" href="logout.php" onclick="confirm('Yakin mau keluar ?')"><i class="fa-solid fa-right-from-bracket"></i>&ensp;&ensp;Sign Out</a></li>
+                        </ul>
+                    </span>
+                </div>
             </div>
             <br>
